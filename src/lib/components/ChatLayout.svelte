@@ -71,7 +71,7 @@
 		</div>
 	</div>
 
-	<div class="flex flex-col h-full">
+	<div class="flex flex-col w-full">
 	   <!-- CONTENT -->
 	   <div class="flex-1 relative overflow-hidden">
 	     <div class="h-full bg-white dark:bg-slate-900 overflow-x-hidden overflow-y-scroll no-scrollbar z-10">
