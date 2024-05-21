@@ -11,13 +11,10 @@
 	import { viewed } from '@/snort_workers/main';
 	import UserDisplayName from '@/components/UserDisplayName.svelte';
 	import UserProfilePic from '@/components/UserProfilePic.svelte';
-	import { formatTimeAgo } from '@/utils'
-	import { currentPubkey } from '@/stores/user'
+	import { formatTimeAgo } from '../../utils'
 
 	export let note: NostrEvent;
-	export let onClickReply = () => {
-		currentPubkey.set(note.pubkey);
-	}
+	export let onClickReply: () => void;
 	export let store: Readable<FrontendData>;
 
 	export let isTop: boolean = false;
@@ -33,6 +30,7 @@ onMount(() => {
 });
 
 	$: childrenCount = $store?.replies.get(note.id) ? $store.replies.get(note.id)!.size : 0;
+
 </script>
 
 <div bind:this={top} class="w-full pt-2 pl-2 pr-2">

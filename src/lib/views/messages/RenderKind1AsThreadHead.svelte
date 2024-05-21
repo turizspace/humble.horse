@@ -14,6 +14,7 @@
 	let top: HTMLDivElement;
 
 	//$: childrenCount = $store?.replies.get(note.id) ? $store.replies.get(note.id)!.size : 0;
+	
 </script>
 
 <div class="w-full pt-2 pl-2 pr-2">
@@ -32,7 +33,8 @@
 					</div>
 					<div bind:this={top} class="justify-end items-center inline-flex">
 						<h6 class="text-gray-500 text-xs font-normal leading-4 py-1">
-							{formatTimeAgo(note.created_at * 1000)}{#if $viewed.has(note.id)}✓{/if}
+							{formatTimeAgo(note.created_at * 1000)}
+							{#if $viewed.has(note.id)}✓{/if}
 						</h6>
 					</div>
 				</div>
