@@ -11,10 +11,13 @@
 	import { viewed } from '@/snort_workers/main';
 	import UserDisplayName from '@/components/UserDisplayName.svelte';
 	import UserProfilePic from '@/components/UserProfilePic.svelte';
-	import { formatTimeAgo } from '../../utils'
+	import { formatTimeAgo } from '@/utils'
+	import { currentPubkey } from '@/stores/user'
 
 	export let note: NostrEvent;
-	export let onClickReply: () => void;
+	export let onClickReply = () => {
+		currentPubkey.set(note.pubkey);
+	}
 	export let store: Readable<FrontendData>;
 
 	export let isTop: boolean = false;
