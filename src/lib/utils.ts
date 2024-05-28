@@ -104,3 +104,4 @@ hour12: true
 return formattedDate;
 }
 }
+
